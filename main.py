@@ -9,6 +9,8 @@ for index,page in df.iterrows():
     pdf.set_text_color(254, 110, 120)
     pdf.cell(w=0,h=10,txt=page["Topic"],align="L",ln=1)
     pdf.line(10,17,200,17)
+    for i in range(page["Pages"] -1):
+        pdf.add_page()
 pdf.output("output.pdf")
 
 
